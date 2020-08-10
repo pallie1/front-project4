@@ -6,7 +6,7 @@
 
 ## Project Description
 
-This is a cafe review app. Users will write reviews for cafes and be able to read other users' reviews. Users can review multiple cafes and cafes can have multiple reviews. There will be a map that shows the locations of all of the cafes that have been reviewed. Google maps API with geocoding will be the api and library I use for the mapping. 
+This is a cafe review app built on React and Ruby on Rails. Users will write reviews for cafes and be able to read other users' reviews. Users can review multiple cafes and cafes can have multiple reviews. There will be a map that shows the locations of all of the cafes that have been reviewed. Google maps API with geocoding will be the api and library I use for the mapping. 
 
 ## User Stories
 - Users want to create accounts so they can access the app.
