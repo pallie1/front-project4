@@ -1,5 +1,6 @@
 # Project Overview
 
+
 ## Project Links
 
 - [TBD](https://answer10.web.app/)
@@ -24,6 +25,9 @@ This is a cafe review app built on React and Ruby on Rails. Users will write rev
 - [wireframes](https://i.imgur.com/pw2rGer.png)
 - [react architecture](https://i.imgur.com/SWHzVxL.png)
 
+## Backend model
+
+## API Snipit
 
 ### MVP/PostMVP 
 
@@ -81,6 +85,7 @@ Unless otherwise noted, time is listed in hours:
 | Day 1 -  Tues | Create welcome page (no working butotns) | - |
 | Day 1 -  Tues | Style welcome page | - |
 | Day 1 -  Tues | Maps page | - |
+| Day 1 -  Tues | test in postman | - |
 | Day 2 -  Wednes | Create mobile first Navbar | - |
 | Day 2 -  Wednes | Seed the database | - |
 | Day 2 -  Wednes | Create the main feed | - |
