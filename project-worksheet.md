@@ -80,6 +80,7 @@ Unless otherwise noted, time is listed in hours:
 | Day 1 -  Tues | Spin up a create React | - |
 | Day 1 -  Tues | Create welcome page (no working butotns) | - |
 | Day 1 -  Tues | Style welcome page | - |
+| Day 1 -  Tues | Maps page | - |
 | Day 2 -  Wednes | Create mobile first Navbar | - |
 | Day 2 -  Wednes | Seed the database | - |
 | Day 2 -  Wednes | Create the main feed | - |
@@ -91,7 +92,7 @@ Unless otherwise noted, time is listed in hours:
 | Day 3 -  Thurs | Edit reviews and edit user profile | - |
 | Day 4 -  Fri | Create the form used for reviews | - |
 | Day 4 -  Fri | Set up the post reviews functionality | - |
-| Day 4 -  Fri | Add maps page | - |
+| Day 4 -  Fri | Maps page | - |
 | Day 5 -  Mon | MVP map filter | - |
 | Day 6 -  Tues | Present | - |
 
