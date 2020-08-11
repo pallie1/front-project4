@@ -71,6 +71,33 @@ Unless otherwise noted, time is listed in hours:
 | Learn more about user authentication | L | 4 | - | - |
 | Total | H | 41 | - | - |
 
+## Project Schedule
+| Day | Deliverable | Status | 
+| --- | :---: |  :---: |
+| Day 1 -  Tues | Do more research on the Google maps API and geocoding | - |
+| Day 1 -  Tues | Set up basic RoR back end | - | 
+| Day 1 -  Tues | Have my schema set so seed data can start being harvested | - |
+| Day 1 -  Tues | Spin up a create React | - |
+| Day 1 -  Tues | Create welcome page (no working butotns) | - |
+| Day 1 -  Tues | Style welcome page | - |
+| Day 2 -  Wednes | Create mobile first Navbar | - |
+| Day 2 -  Wednes | Seed the database | - |
+| Day 2 -  Wednes | Create the main feed | - |
+| Day 2 -  Wednes | Style the main feed | - |
+| Day 2 -  Wednes | Make the search for the reviews | - |
+| Day 3 -  Thurs | Set up the add a new cafe form | - |
+| Day 3 -  Thurs | Set page for adding a new review | - |
+| Day 3 -  Thurs | Style the new review page | - |
+| Day 3 -  Thurs | Edit reviews and edit user profile | - |
+| Day 4 -  Fri | Create the form used for reviews | - |
+| Day 4 -  Fri | Set up the post reviews functionality | - |
+| Day 4 -  Fri | Add maps page | - |
+| Day 5 -  Mon | MVP map filter | - |
+| Day 6 -  Tues | Present | - |
+
+
+
+
 ## Additional Libraries
 Google maps API - display locations on a map
 Google maps geocoding - turn addresses into geographic coordinates
