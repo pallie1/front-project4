@@ -26,13 +26,13 @@ const Nav = ({ setHideProps, hideProps }) => {
           <ul id={open ? "open" : "closed-burger-menu-list"}>
             <li className="burger-menu-item">
               <Link
-                to="/"
+                to="/feed"
                 onClick={() => {
                   setOpen(!open);
                 //   setHideProps(!open);
                 }}
               >
-                Home
+                Home/Feed
               </Link>
             </li>
             <li className="burger-menu-item">
