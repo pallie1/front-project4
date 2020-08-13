@@ -5,7 +5,7 @@ import apiUrl from '../../apiConfig';
 import axios from 'axios';
 
 const CreateAccount = (props) => {
-    const [input, setInput] = useState({username: "", password: ""});
+    const [input, setInput] = useState({username: "", id: "", password: ""});
 
     console.log('input from ca', input)
 

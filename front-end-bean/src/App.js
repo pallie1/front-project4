@@ -1,9 +1,13 @@
 import React, { useState, createContext } from 'react';
+import CreateAccount from './Components/CreateAccount/CreateAccount';
+import Login from './Components/Login/Login';
 import Welcome from './Components/Welcome/Welcome';
+import PostReview from './Components/PostReview/PostReview';
 import Feed from './Components/Feed/Feed';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import CreateAccount from './Components/CreateAccount/CreateAccount';
+
+
 
 export const DataContext = createContext();
 
@@ -17,6 +21,8 @@ const [activeUser, setActiveUser] = useState();
         <Route exact path ='/' component={Welcome} />
         <Route exact path='/feed' component={Feed} />
         <Route exact path='/create-account' component={CreateAccount} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/post-review' component={PostReview} />
         </DataContext.Provider>
       </Switch>
     </div>

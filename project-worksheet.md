@@ -93,6 +93,7 @@ Unless otherwise noted, time is listed in hours:
 | Day 2 -  Wednes | Make the search for the reviews | - |
 | Day 3 -  Thurs | Set up the add a new cafe form | - |
 | Day 3 -  Thurs | Create login page | - |
+| Day 3 -  Thurs | Create login profile page | - |
 | Day 3 -  Thurs | Create new account page | Completed |
 | Day 3 -  Thurs | Set page for adding a new review | - |
 | Day 3 -  Thurs | Style the new review page | - |
