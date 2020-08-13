@@ -86,12 +86,14 @@ Unless otherwise noted, time is listed in hours:
 | Day 1 -  Tues | Style welcome page | 1/2 |
 | Day 1 -  Tues | Maps page | - |
 | Day 1 -  Tues | test in postman | Completed |
-| Day 2 -  Wednes | Create mobile first Navbar | - |
-| Day 2 -  Wednes | Seed the database | - |
-| Day 2 -  Wednes | Create the main feed | - |
-| Day 2 -  Wednes | Style the main feed | - |
+| Day 2 -  Wednes | Create mobile first Navbar | Completed |
+| Day 2 -  Wednes | Seed the database | Completed |
+| Day 2 -  Wednes | Create the main feed | Completed |
+| Day 2 -  Wednes | Style the main feed | Completed |
 | Day 2 -  Wednes | Make the search for the reviews | - |
 | Day 3 -  Thurs | Set up the add a new cafe form | - |
+| Day 3 -  Thurs | Create login page | - |
+| Day 3 -  Thurs | Create new account page | Completed |
 | Day 3 -  Thurs | Set page for adding a new review | - |
 | Day 3 -  Thurs | Style the new review page | - |
 | Day 3 -  Thurs | Edit reviews and edit user profile | - |

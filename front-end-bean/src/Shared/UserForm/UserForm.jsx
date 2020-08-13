@@ -1,8 +1,25 @@
 import React from 'react';
 
-const UserForm = () => {
+const UserForm = ({ handleChange, handleSubmit, input }) => {
+    console.log(input, 'input')
     return (
-        <h1>Feed</h1>
+        <form onSubmit={handleSubmit}>
+            <label>Username: </label>
+            <input 
+                onChange={handleChange}
+                name='username'
+                value={input.username}
+                placeholder='username'
+            />
+            <label>Password: </label>
+            <input 
+                onChange={handleChange}
+                name='password'
+                value={input.password}
+                placeholder='password'
+            />
+            <button>Submit</button>
+        </form>
     )
 }
 

@@ -1,4 +1,6 @@
-
+body {
+    background-color: ghostwhite;
+}
 
 ul {
     list-style-type: none;
@@ -8,3 +10,16 @@ a {
     text-decoration: none;
 }
 
+#header-nav {
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    background-color: ghostwhite;
+    height: 45px;
+}
+
+#closed-burger-menu-list {
+    display: none;
+  }
+
+  

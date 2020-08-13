@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Welcome.scss';
 
 const Welcome = () => {
@@ -10,7 +11,7 @@ const Welcome = () => {
             <h1 className='welcome-bean'>bean</h1>
             <h3>cafe review app</h3>
             <button>Log in</button>
-            {/* <i class="fas fa-camera"></i> */}
+            <Link to='/create-account'>Create an account</Link>
          </div>
 
         </>

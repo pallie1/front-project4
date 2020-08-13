@@ -2,34 +2,30 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Nav.scss";
 
-const Nav = ({ setHideProps, hideProps }) => {
+const Nav = ({ setHideChildren }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div id="headerNav">
-      <nav id="deskNav">
+    <div id="header-nav">
+      <nav id="mobile-nav">
         <div id="burger-menu">
-          <div id="burger">
-            <h1 className="layout-h1">bean</h1>
-            <div
-              id="burger-span"
-              onClick={() => {
-                setOpen(!open);
-                // setHideProps(!open);
-              }}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <div
+            id="burger"
+            onClick={() => {
+              setOpen(!open);
+              setHideChildren(!open);
+            }}
+          >
+            <i className="fa fa-bars" aria-hidden="true"></i>
           </div>
+          {/* </div> */}
           <ul id={open ? "open" : "closed-burger-menu-list"}>
             <li className="burger-menu-item">
               <Link
                 to="/feed"
                 onClick={() => {
                   setOpen(!open);
-                //   setHideProps(!open);
+                  setHideChildren(!open);
                 }}
               >
                 Home/Feed
@@ -40,7 +36,7 @@ const Nav = ({ setHideProps, hideProps }) => {
                 to="/map"
                 onClick={() => {
                   setOpen(!open);
-                //   setHideProps(!open);
+                  setHideChildren(!open);
                 }}
               >
                 Map
@@ -51,7 +47,7 @@ const Nav = ({ setHideProps, hideProps }) => {
                 to="/favorites"
                 onClick={() => {
                   setOpen(!open);
-                //   setHideProps(!open);
+                  setHideChildren(!open);
                 }}
               >
                 Favorites
@@ -62,7 +58,7 @@ const Nav = ({ setHideProps, hideProps }) => {
                 to="/profile"
                 onClick={() => {
                   setOpen(!open);
-                //   setHideProps(!open);
+                  setHideChildren(!open);
                 }}
               >
                 Profile
@@ -73,7 +69,7 @@ const Nav = ({ setHideProps, hideProps }) => {
                 to="/postreview"
                 onClick={() => {
                   setOpen(!open);
-                //   setHideProps(!open);
+                  setHideChildren(!open);
                 }}
               >
                 Post a Review
@@ -131,6 +127,6 @@ const Nav = ({ setHideProps, hideProps }) => {
       </nav>
     </div>
   );
-}
+};
 
 export default Nav;
