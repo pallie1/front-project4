@@ -3,6 +3,7 @@ import CreateAccount from './Components/CreateAccount/CreateAccount';
 import Login from './Components/Login/Login';
 import Welcome from './Components/Welcome/Welcome';
 import PostReview from './Components/PostReview/PostReview';
+import CreateCafe from './Components/CreateCafe/CreateCafe';
 import Feed from './Components/Feed/Feed';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
@@ -23,6 +24,7 @@ const [activeUser, setActiveUser] = useState();
         <Route exact path='/create-account' component={CreateAccount} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/post-review' component={PostReview} />
+        <Route exact path='/create-cafe' component={CreateCafe} />
         </DataContext.Provider>
       </Switch>
     </div>

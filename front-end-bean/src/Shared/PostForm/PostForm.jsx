@@ -24,6 +24,7 @@ const PostForm = ({ handlePostChange, handlePostSubmit, inputPost}) => {
                 value={inputPost.content}
                 placeholder='What did you think?'
             />
+            <button>Submit</button>
         </form>
     )
 }
