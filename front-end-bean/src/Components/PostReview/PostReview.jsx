@@ -10,8 +10,7 @@ import './PostReview.scss';
 const PostReview = () => {
 
     const { activeUser } = useContext(DataContext);
-    const [input, setInput] = useState({img: "", rate: "", content: ""});
-    // const [cafeSearchInput, setCafeSearchInput] = useState({name: ""});
+    const [inputPost, setInputPost] = useState({img: "", rate: "", content: ""});
     const [allCafes, setAllCafes] = useState([]);
     const [chosenCafe, setChosenCafe] = useState({});
 
@@ -22,9 +21,9 @@ const PostReview = () => {
             try {
                 const res = await axios(`${apiUrl}/shops`);
                 console.log('res from get all cafes post rev', res.data)
-                // if (res.data.length > 0) {
+                if (res.data.length > 0) {
                     setAllCafes(res.data);
-                // }
+                }
             } catch (err) {
                 console.error(err);
             }
@@ -41,46 +40,37 @@ const PostReview = () => {
     console.log(mappedCafes, 'mappedCafes')
     
 
-    const handleChange = (event) => {
-        setInput({ ...input, [event.target.name]: event.target.value });
+    const handlePostChange = (event) => {
+        // setInputPost({ ...inputPost, [event.target.name]: event.target.value });
     }
 
-    const handleSubmit = (event) => {
+    const handlePostSubmit = (event) => {
         event.preventDefault();
     }
 
-    // const handleCafeSearchChange = (event) => {
-    //     setCafeSearchInput({ ...cafeSearchInput, [event.target.name]: event.target.value });
-    // }
 
-    // const handleCafeSearchSubmit = (event) => {
-    //     event.preventDefault();
-    // }
+    const handleChange = (event) => {
+        console.log('event from select', event)
+        setChosenCafe(event.value)
+    }
+    console.log('chosen cafe', chosenCafe)
+
     console.log('cafe from click', chosenCafe)
     if (activeUser !== undefined && allCafes.length > 0 ) {
     return (
         <>
 
         <div className="container">
-        {/* <div className="row"> */}
-          {/* <div className="col-md-3"></div> */}
-          {/* <div className="col-md-6"> */}
             <Select 
             options={mappedCafes}
-            onSubmit={setChosenCafe()}
+            onChange={handleChange}
              />
-          {/* </div> */}
-          {/* <div className="col-md-4"></div> */}
         </div>
-        <button>Submit Cafe</button>
-      {/* </div> */}
 
-
-        {/* <Select options={allCafes} /> */}
         <PostForm 
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            input={input}
+            handlePostChange={handlePostChange}
+            handlePostSubmit={handlePostSubmit}
+            inputPost={inputPost}
         />
         </>
     )

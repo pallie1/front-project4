@@ -1,27 +1,27 @@
 import React from 'react';
 
-const PostForm = ({ handleChange, handleSubmit, input}) => {
+const PostForm = ({ handlePostChange, handlePostSubmit, inputPost}) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handlePostSubmit}>
             <label>Image Link: </label>
             <input 
-                onChange={handleChange}
+                onChange={handlePostChange}
                 name='img'
-                value={input.img}
+                value={inputPost.img}
                 placeholder='Link to a hosted image. ex: imgur'
             />
             <label>Rate: </label>
             <input
-                onChange={handleChange}
+                onChange={handlePostChange}
                 name='rate'
-                value={input.rate}
+                value={inputPost.rate}
                 placeholder='Rate out of 10. ex: 5.6'
             />
             <label>Review: </label>
             <input 
-                onChange={handleChange}
+                onChange={handlePostChange}
                 name='content'
-                value={input.content}
+                value={inputPost.content}
                 placeholder='What did you think?'
             />
         </form>
