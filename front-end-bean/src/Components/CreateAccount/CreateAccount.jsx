@@ -26,6 +26,7 @@ const CreateAccount = (props) => {
         .catch(console.error)
     }
                 
+    console.log('input type', input)
 
 
     return (

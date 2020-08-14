@@ -65,6 +65,11 @@ const PostReview = () => {
     const handlePostSubmit = (event) => {
         event.preventDefault();
 
+        axios({
+            url: `${apiUrl}/reviews`,
+            method: 'POST',
+            data: postRevData[0]
+        })
     }
 
     // console.log('activeUser.user_id outside the if', activeUser.user_id)
