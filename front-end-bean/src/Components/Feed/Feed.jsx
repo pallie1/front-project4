@@ -31,7 +31,7 @@ const Feed = () => {
       return (
         <div className={'review-div'} key={review.id}>
           <p>{review.user.username}</p>
-          <img src={review.img} alt="user submited coffee shop picture" />
+          {review.img.length < 5 ? null : <img src={review.img} alt="user submited coffee shop" />}
           <p>{review.rate}</p>
           <p>{review.content}</p>
         </div>

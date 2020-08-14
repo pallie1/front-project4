@@ -7,7 +7,7 @@ import apiUrl from '../../apiConfig';
 import axios from 'axios';
 import './PostReview.scss';
 
-const PostReview = () => {
+const PostReview = (props) => {
 
     const { activeUser } = useContext(DataContext);
     const [inputPost, setInputPost] = useState({img: "", rate: "", content: ""});
@@ -31,11 +31,11 @@ const PostReview = () => {
         makeCafeAPICall();
     },[])
 
-    const mappedCafes = [];
 
-    allCafes.map((cafe) => {
-        mappedCafes.push({value: cafe.id, label: cafe.name})
+    const mappedCafes = allCafes.map((cafe) => {
+        return {value: cafe.id, label: cafe.name}
     })
+
     // console.log(mappedCafes, 'mappedCafes')
     const handleChange = (event) => {
         // console.log('event from select', event)
@@ -50,7 +50,7 @@ const PostReview = () => {
 
     const postRevData = [];
 
-    console.log(activeUser, 'activeUser in post review')
+    // console.log(activeUser, 'activeUser in post review')
     if (chosenCafe !== undefined && activeUser !== undefined && inputPost !== undefined) {
         postRevData.push({
             user_id: activeUser.id, 
@@ -69,17 +69,19 @@ const PostReview = () => {
             url: `${apiUrl}/reviews`,
             method: 'POST',
             data: postRevData[0]
-        })
+        }).then(() => {
+            props.history.push('/feed')
+        }).catch(console.error);
     }
 
     // console.log('activeUser.user_id outside the if', activeUser.user_id)
     // console.log('chosenCafe.value outside the if', chosenCafe.value)
-    console.log('postRevData outside the if', postRevData)
+    // console.log('postRevData outside the if', postRevData)
     // console.log('inputPost', inputPost)
 
 
 
-    console.log('chosen cafe', chosenCafe)
+    // console.log('chosen cafe', chosenCafe)
 
     // console.log('cafe from click', chosenCafe)
     if (activeUser !== undefined && allCafes.length > 0 ) {
