@@ -84,24 +84,24 @@ Unless otherwise noted, time is listed in hours:
 | Day 1 -  Tues | Spin up a create React | Completed |
 | Day 1 -  Tues | Create welcome page (no working butotns) | Completed |
 | Day 1 -  Tues | Style welcome page | 1/2 |
-| Day 1 -  Tues | Maps page | - |
 | Day 1 -  Tues | test in postman | Completed |
 | Day 2 -  Wednes | Create mobile first Navbar | Completed |
 | Day 2 -  Wednes | Seed the database | Completed |
 | Day 2 -  Wednes | Create the main feed | Completed |
-| Day 2 -  Wednes | Style the main feed | Completed |
+| Day 2 -  Wednes | Style the main feed | 1/2 |
 | Day 2 -  Wednes | Make the search for the reviews | - |
-| Day 3 -  Thurs | Set up the add a new cafe form | - |
-| Day 3 -  Thurs | Create login page | - |
-| Day 3 -  Thurs | Create login profile page | - |
+| Day 3 -  Thurs | Set up the add a new cafe form | Completed |
+| Day 3 -  Thurs | Create login page | Completed |
+| Day 3 -  Thurs | Create profile page | - |
 | Day 3 -  Thurs | Create new account page | Completed |
-| Day 3 -  Thurs | Set page for adding a new review | - |
-| Day 3 -  Thurs | Style the new review page | - |
+| Day 3 -  Thurs | Set page for adding a new review | Completed |
 | Day 3 -  Thurs | Edit reviews and edit user profile | - |
-| Day 4 -  Fri | Create the form used for reviews | - |
-| Day 4 -  Fri | Set up the post reviews functionality | - |
+| Day 4 -  Fri | Create the form used for reviews | Completed |
+| Day 4 -  Fri | Set up the post reviews functionality | Completed |
+| Day 3 -  Fri | Style the new review page | - |
 | Day 4 -  Fri | Maps page | - |
 | Day 5 -  Mon | MVP map filter | - |
+| Day 5 -  Mon | Styling | - |
 | Day 6 -  Tues | Present | - |
 
 
