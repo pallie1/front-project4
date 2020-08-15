@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form'
 
 const CafeForm = ({ handleCafeSubmit,handleCafeChange, handleCoordsSubmit, inputCafe}) => {
     return (
@@ -52,3 +53,5 @@ const CafeForm = ({ handleCafeSubmit,handleCafeChange, handleCoordsSubmit, input
 }
 
 export default CafeForm;
+
+

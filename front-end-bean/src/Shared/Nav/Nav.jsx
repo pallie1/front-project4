@@ -6,8 +6,12 @@ const Nav = ({ setHideChildren }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div id="header-nav">
+    <div className={open ? "open-header-nav" : "closed-header-nav"}>
+        <div>
+            {open ? null : <Link to={'/map'}><i class="fa fa-map-marker" aria-hidden="true"></i></Link>}
+        </div>
       <nav id="mobile-nav">
+
         <div id="burger-menu">
           <div
             id="burger"
