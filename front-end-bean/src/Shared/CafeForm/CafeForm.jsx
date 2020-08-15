@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CafeForm = ({ handleCafeChange, handleCafeSubmit, inputCafe}) => {
+const CafeForm = ({ handleCafeSubmit,handleCafeChange, handleCoordsSubmit, inputCafe}) => {
     return (
-        <form onSubmit={handleCafeSubmit}>
+        <form onSubmit={handleCoordsSubmit}>
             <label>Cafe name: </label>
             <input 
                 onChange={handleCafeChange}
@@ -45,7 +45,8 @@ const CafeForm = ({ handleCafeChange, handleCafeSubmit, inputCafe}) => {
                 value={inputCafe.country}
                 placeholder='ex: USA'
             />
-            <button>Submit!</button>
+            <button>First Get Coordinates</button>
+            <button onClick={() => handleCafeSubmit()}>Then Submit Cafe</button>
         </form>
     )
 }
