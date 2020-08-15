@@ -5,11 +5,10 @@ import Welcome from './Components/Welcome/Welcome';
 import PostReview from './Components/PostReview/PostReview';
 import CreateCafe from './Components/CreateCafe/CreateCafe';
 import MapDis from './Components/MapDis/MapDis';
+import SingleCafeRevs from './Components/SingleCafeRevs/SingleCafeRevs';
 import Feed from './Components/Feed/Feed';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
-
-
 
 
 export const DataContext = createContext();
@@ -27,6 +26,7 @@ const [activeUser, setActiveUser] = useState();
         <Route exact path='/create-account' component={CreateAccount} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/post-review' component={PostReview} />
+        <Route exact path='/reviews/:id' component={SingleCafeRevs} />
         <Route exact path='/create-cafe' component={CreateCafe} />
         </DataContext.Provider>
       </Switch>
