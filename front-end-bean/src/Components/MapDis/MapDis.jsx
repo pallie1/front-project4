@@ -63,7 +63,7 @@ const MapDis = () => {
 
   //       ReactMapGl.addControl(coder);
 
-  if (activeUser !== undefined) {
+//   if (activeUser !== undefined) {
     return (
       <div>
         <ReactMapGl
@@ -74,30 +74,35 @@ const MapDis = () => {
             setViewPort(viewPort);
           }}
         >
-          {coordsPairs.map((cafe) => (
-            // console.log('map inside return', cafe.id)
-            <Marker
-              key={cafe.id}
-              longitude={Number(cafe.coordinates[0])}
-              latitude={Number(cafe.coordinates[1])}
-            >
-              <div>
-                <i className="fa fa-coffee icon-color" aria-hidden="true"></i>
-              </div>
-            </Marker>
-          ))}
+{coordsPairs.map(cafe => (
+    // console.log('map inside return', cafe.id)
+    <Marker
+      key={cafe.id}
+      longitude={Number(cafe.coordinates[0])}
+      latitude={Number(cafe.coordinates[1])}
+    >
+      {/* <div> */}
+        <Link to={`/reviews/${cafe.id}`}>
+        <i className="fa fa-coffee icon-color" aria-hidden="true"></i>
+        </Link>
+      {/* </div> */}
+    </Marker>
+  ))}
         </ReactMapGl>
         <h1>HEY i;m a mappp</h1>
       </div>
     );
-  } else {
-    return (
-      <>
-        <h1>Log in please!</h1>
-        <Link to="/login">Login</Link>
-      </>
-    );
-  }
+//   } else {
+//     return <h1>Loading...</h1>
+//   }
+//   return (
+//     <>
+//       <h1>Log in please!</h1>
+//       <Link to="/login">Login</Link>
+//     </>
+//   );
 };
 
 export default MapDis;
+
+
