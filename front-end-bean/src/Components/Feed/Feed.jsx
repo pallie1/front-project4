@@ -28,9 +28,11 @@ const Feed = () => {
     console.log("user inside review single- ", review.user.username);
 
     if (review.user.length !== null) {
+
       return (
         <div className={'review-div'} key={review.id}>
-          <p>{review.user.username}</p>
+          <p>{review.user.username} went to</p>
+          <p>{review.shop.name}</p>
           {review.img.length < 5 ? null : <img src={review.img} alt="user submited coffee shop" />}
           <p>{review.rate}</p>
           <p>{review.content}</p>
