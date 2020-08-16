@@ -8,8 +8,10 @@ import MapDis from './Components/MapDis/MapDis';
 import SingleCafeRevs from './Components/SingleCafeRevs/SingleCafeRevs';
 import Feed from './Components/Feed/Feed';
 import Profile from './Components/Profile/Profile';
+import EditProfile from './Components/EditProfile/EditProfile';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
+
 
 
 export const DataContext = createContext();
@@ -27,9 +29,11 @@ const [activeUser, setActiveUser] = useState();
         <Route exact path='/create-account' component={CreateAccount} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/post-review' component={PostReview} />
-        <Route exact path='/reviews/:id' component={SingleCafeRevs} />
         <Route exact path='/create-cafe' component={CreateCafe} />
         <Route exact path='/profile' component={Profile} />
+        <Route exact path='/edit-profile' component={EditProfile} />
+        {/* <Route exact path='/profile/:id' component={ProfileUser} /> */}
+        <Route exact path='/reviews/:id' component={SingleCafeRevs} />
         </DataContext.Provider>
       </Switch>
     </div>

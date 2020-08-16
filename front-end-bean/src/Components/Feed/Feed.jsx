@@ -7,6 +7,7 @@ import "./Feed.scss";
 
 const Feed = () => {
   const { activeUser } = useContext(DataContext);
+  console.log('acitveUSer', activeUser)
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const Feed = () => {
   return (
     <>
       <div>
-      <p>{activeUser.username}</p>
+      <Link to='/profile'>{activeUser.username}</Link>
       <h2><Link to='/post-review'>Where have you been?</Link></h2>
       </div>
       <h1>Where have other users have been.</h1>
