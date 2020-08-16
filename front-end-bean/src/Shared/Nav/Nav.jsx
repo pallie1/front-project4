@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import { DataContext } from '../../App';
 import "./Nav.scss";
 
 const Nav = ({ setHideChildren }) => {
+  // const { activeUser } = useContext(DataContext);
   const [open, setOpen] = useState(false);
 
   return (
     <div className={open ? "open-header-nav" : "closed-header-nav"}>
         <div>
-            {open ? null : <Link to={'/map'}><i class="fa fa-map-marker" aria-hidden="true"></i></Link>}
+            {open ? null : <Link to={'/map'}><i className="fa fa-map-marker" aria-hidden="true"></i></Link>}
         </div>
       <nav id="mobile-nav">
 
@@ -20,7 +22,7 @@ const Nav = ({ setHideChildren }) => {
               setHideChildren(!open);
             }}
           >
-            <i className="fa fa-bars" aria-hidden="true"></i>
+            <i className="fa fa-bars hamburger-hover" aria-hidden="true"></i>
           </div>
           {/* </div> */}
           <ul id={open ? "open" : "closed-burger-menu-list"}>
@@ -59,6 +61,7 @@ const Nav = ({ setHideChildren }) => {
             </li>
             <li className="burger-menu-item">
               <Link
+                // to={activeUser ? `/profile/user/${activeUser.id}` : '/login'}
                 to="/profile"
                 onClick={() => {
                   setOpen(!open);

@@ -7,6 +7,7 @@ import CreateCafe from './Components/CreateCafe/CreateCafe';
 import MapDis from './Components/MapDis/MapDis';
 import SingleCafeRevs from './Components/SingleCafeRevs/SingleCafeRevs';
 import Feed from './Components/Feed/Feed';
+import Profile from './Components/Profile/Profile';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
@@ -28,6 +29,7 @@ const [activeUser, setActiveUser] = useState();
         <Route exact path='/post-review' component={PostReview} />
         <Route exact path='/reviews/:id' component={SingleCafeRevs} />
         <Route exact path='/create-cafe' component={CreateCafe} />
+        <Route exact path='/profile' component={Profile} />
         </DataContext.Provider>
       </Switch>
     </div>
