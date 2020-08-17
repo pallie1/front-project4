@@ -23,7 +23,7 @@ const Profile = () => {
         return (
             <>
             <h1>{activeUser.username}</h1>
-            <Link to='/edit-profile'>Edit Profile</Link>
+            <Link to='/edit-profile'>Edit</Link>
             <div>
                 <p>Your reviews: </p>
                 {usersCafes}

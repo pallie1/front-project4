@@ -9,6 +9,8 @@ import SingleCafeRevs from './Components/SingleCafeRevs/SingleCafeRevs';
 import Feed from './Components/Feed/Feed';
 import Profile from './Components/Profile/Profile';
 import EditProfile from './Components/EditProfile/EditProfile';
+import DeleteProfile from './Components/DeleteProfile/DeleteProfile';
+import ProfileOthers from './Components/ProfileOthers/ProfileOthers';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
@@ -32,7 +34,8 @@ const [activeUser, setActiveUser] = useState();
         <Route exact path='/create-cafe' component={CreateCafe} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/edit-profile' component={EditProfile} />
-        {/* <Route exact path='/profile/:id' component={ProfileUser} /> */}
+        <Route exact path='/delete-profile' component={DeleteProfile} />
+        <Route exact path='/profile/:id' component={ProfileOthers} />
         <Route exact path='/reviews/:id' component={SingleCafeRevs} />
         </DataContext.Provider>
       </Switch>

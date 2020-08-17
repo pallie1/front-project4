@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { DataContext } from "../../App";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import LoginForm from "../LoginForm/LoginForm";
 import axios from "axios";
 import apiUrl from "../../apiConfig";
@@ -55,6 +55,8 @@ const Login = () => {
          handleSubmit={handleSubmit}
          input={input}
        />
+       <h2>Don't have an account yet?</h2>
+       <Link to='/create-account'>Create an Account</Link>
     </>
   );
 };
