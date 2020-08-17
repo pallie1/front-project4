@@ -7,6 +7,8 @@ import axios from 'axios';
 
 const EditProfile = () => {
     const { activeUser, setActiveUser } = useContext(DataContext);
+    const [isUserNew, isSetNewUser] = useState(false);
+    const [showDeleteDiv, setShowDeleteDiv] = useState(false);
     const [input, setInput] = useState({username: activeUser.username, password: 'password'});
 
     if (activeUser) {
@@ -25,12 +27,22 @@ const EditProfile = () => {
             })
             
             .then(() => alert('Account updated!'))
-            // .then((res) => {setActiveUser(res.data)})
-            .then((res) => console.log('res!', res))
+            .then(() => isSetNewUser(true))
             .catch(console.error)
+            // .then(axios(`${apiUrl}/users/${activeUser.id}`)
         }
                     
         console.log('input type', input)
+
+        if (isUserNew) {
+            axios(`${apiUrl}/users/${activeUser.id}`)
+            .then((res) => {
+                setActiveUser(res.data)
+                // console.log('res from get call', res)
+            })
+            
+            .catch((err) => console.error(err))
+        }
     
 
     return (
@@ -41,7 +53,10 @@ const EditProfile = () => {
             handleSubmit={handleSubmit}
             input={input}
             />
-        <Link to='/profile'>Cancle</Link>
+        <Link to='/profile'>Go Back</Link>
+        <div>
+            <button onClick={() => setShowDeleteDiv(true)}>Delete Account</button>
+        </div>
         </>
     )
     } else {
