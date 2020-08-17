@@ -33,16 +33,42 @@ const ProfileOthers = (props) => {
             makeAPICall();
         },[])
    
+        
 
-        if ( activeUser !== undefined && clickedUser.shops !== undefined) {    
-        let usersCafes = clickedUser.shops.map(cafe => {
+        if ( activeUser !== undefined && clickedUser.reviews !== undefined) {    
+        
+        let cafeInfo = [];
+        let usersRevs = clickedUser.reviews.map(rev => {
+
+            for (let i=0; i<clickedUser.reviews.length; i++) {
+                if (clickedUser.shops.id === clickedUser.reviews[i].shop_id) {
+                    cafeInfo.push(
+                        clickedUser.shops.name,
+                        clickedUser.shops.address,
+                        clickedUser.shops.city,
+                        clickedUser.shops.state,
+                        clickedUser.shops.postalcode,
+                        clickedUser.shops.country
+                        )
+                }
+            }
+
+            console.log('cafeInfo', cafeInfo)
+           
             return (
-                <div key={cafe.id}>
-                    <h3>{cafe.name}</h3>
-                    <h4>{cafe.address}</h4>
-                    <h4>{cafe.city}, {cafe.state}</h4>
-                    <h4>{cafe.postalcode}</h4>
-                    <h4>{cafe.country}</h4>
+                <div key={rev.id}>
+                    <div>
+                        <h1>{cafeInfo[0]}</h1>
+                        <p>{cafeInfo[1]}</p>
+                        <p>{cafeInfo[2], cafeInfo[3]}</p>
+                        <p>{cafeInfo[4]}</p>
+                        <p>{cafeInfo[5]}</p>
+                    </div>
+                    <div>
+                        {rev.img.length < 5 ? null : <img src={rev.img} alt="user submited coffee shop" />}
+                        <p>{rev.rate}</p>
+                        <p>{rev.content}</p>
+                    </div>
                 </div>
             )
         })
@@ -51,7 +77,7 @@ const ProfileOthers = (props) => {
             <>
             <h1>{clickedUser.username}'s reviews!</h1>
             <div>
-                {usersCafes}
+                {usersRevs}
             </div>
             </>
         )
