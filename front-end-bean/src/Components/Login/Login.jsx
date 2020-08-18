@@ -43,7 +43,7 @@ const Login = () => {
         // console.log(res.data.username, 'username res login')
 
         if (res.data.status === 200) {
-          // console.log('res.data from login', JSON.parse(res.data.user))
+          console.log('res.data from login', JSON.parse(res.data.user))
           setActiveUser(JSON.parse(res.data.user));
           setInput("");
         } else {

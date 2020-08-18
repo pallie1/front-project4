@@ -26,9 +26,12 @@ const CreateAccount = (props) => {
             url: `${apiUrl}/users`,
             method: 'POST',
             data: JSON.stringify(user),
-            headers: {
-                "Content-Type": "application/json",
-              },
+            // headers: {
+            //     "Content-Type": "application/json",
+            //   },
+              headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+              }
         })
         .then(() => {
             props.history.push('/login');
