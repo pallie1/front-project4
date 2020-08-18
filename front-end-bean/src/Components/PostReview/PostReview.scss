@@ -1,3 +1,26 @@
 .container {
-    width: 400px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
+
+
+.smaller-width-select {
+    width: 300px;
+}
+
+.blurb-pr {
+    background-color: #D2E4EF;
+    height: 15vh;
+    width: 45vw;
+    padding: 10px;
+    margin: 30px 0 30px 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+} 

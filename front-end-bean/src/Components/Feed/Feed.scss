@@ -1,17 +1,50 @@
+.u-bean {
+  background-color: ghostwhite;
+  height: 15vh;
+  width: 100vw;
+  margin: 15px 0 30px 0;
+  padding-top: 5px;
 
+  a {
+    color: #1b394b;
+    padding: 0 20px 0 20px;
+  }
+
+  h2 {
+    // background-color: #d2e4ef;
+    // height: 5vh;
+    // width: 60vw;
+    // padding: 10px;
+    // margin: 15px 0 30px 0;
+    // border-radius: 4px;
+
+    text-align: center;
+    
+  }
+}
 
 .review-div {
+  width: 100vw;
+  background-color: ghostwhite;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+  padding: 5px 0 5px 0;
+
+  img {
     width: 100vw;
-    background-color: ghostwhite;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0 10px 0;
+  }
 
-    img {
-        width: 100vw;
-    }
+  p {
+    padding: 0px 20px 0 20px;
+  }
 
-    p {
-        padding-left: 25px;
-    }
+  // .name-feed {
+  //   // padding: 5px 20px 0 20px;
+  //   // color: #1b394b;
+  // }
+
+  // .coffe-name {
+  //   margin: 20px 0 20px 0;
+  // }
 }

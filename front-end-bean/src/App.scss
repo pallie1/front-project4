@@ -1,26 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&family=Lato:wght@300;700');
 
-// @import '~@fortawesome/fontawesome-free/scss/regular';
-// @import '~@fortawesome/fontawesome-free/scss/solid';
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
-// @import '~@fortawesome/fontawesome-free/scss/brands';
+
+
+
+
 
 .App {
-  // background-color: #CBFFFB;
-  background-color: #C9FDF8;
+  background-color: #BCD6E7;
+  color: #1B384B;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  input {
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    height: 1.9rem;
+    width: 10rem;
+    font-size: medium;
+  }
 }
 
-body {
-  color: #0A4E70;
-}
 
 h1 {
   font-family: 'Montserrat', 'sans-serif';
   font-weight: 800;
 }
+
 

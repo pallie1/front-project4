@@ -3,15 +3,40 @@
 }
 
 .welcome-name-tag {
-  margin-top: -150px;
+  margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    margin-top: -20px;
+  }
+}
+
+.buttons-div {
+  display: flex;
+  align-items: space-between;
+
+  .button-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    height: 1.9rem;
+    width: 10rem;
+    background-color: #2B5978;
+    color: white;
+    cursor: pointer;
+    margin: 20px 5px 0 5px;
+    font-size: large;
+  }
 }
 
 #welcome-div {
-  a {
-    border: none;
-    border-radius: 5px;
-    background-color: #e2807c;
-    color: white;
-    cursor: pointer;
+  margin-bottom: 40px;
+ 
+  img {
+    width: 100vw;
   }
 }

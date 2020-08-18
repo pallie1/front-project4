@@ -1,8 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { DataContext } from "../../App";
 import axios from 'axios';
 import apiUrl from '../../apiConfig';
+import '../Profile/Profile.scss';
 
 const ProfileOthers = (props) => {
     const { activeUser } = useContext(DataContext);
@@ -10,6 +11,8 @@ const ProfileOthers = (props) => {
 
     const pathname = props.location.pathname;
     const userID = pathname.slice(9, pathname.length)
+
+
 
     // console.log('activeUSer on profil',  userID)
 
@@ -33,22 +36,20 @@ const ProfileOthers = (props) => {
             makeAPICall();
         },[])
    
-        
 
         if ( activeUser !== undefined && clickedUser.reviews !== undefined) {    
-        
-        let cafeInfo = [];
+            let cafeInfo = [];
         let usersRevs = clickedUser.reviews.map(rev => {
-
             for (let i=0; i<clickedUser.reviews.length; i++) {
-                if (clickedUser.shops.id === clickedUser.reviews[i].shop_id) {
+                if (clickedUser.shops[i].id === rev.shop_id) {
                     cafeInfo.push(
-                        clickedUser.shops.name,
-                        clickedUser.shops.address,
-                        clickedUser.shops.city,
-                        clickedUser.shops.state,
-                        clickedUser.shops.postalcode,
-                        clickedUser.shops.country
+                        clickedUser.shops[i].name,
+                        // clickedUser.shops[i].address,
+                        // clickedUser.shops[i].city,
+                        // clickedUser.shops[i].state,
+                        // clickedUser.shops[i].postalcode,
+                        // clickedUser.shops[i].country
+                        clickedUser.shops[i].id
                         )
                 }
             }
@@ -56,13 +57,14 @@ const ProfileOthers = (props) => {
             console.log('cafeInfo', cafeInfo)
            
             return (
-                <div key={rev.id}>
+                <div key={rev.id} className='user-rev-div' >
                     <div>
-                        <h1>{cafeInfo[0]}</h1>
-                        <p>{cafeInfo[1]}</p>
+                        {/* <h1>{cafeInfo[0]}</h1> */}
+                        <Link to={`/reviews/${cafeInfo[1]}`}><h3 className='name-feed'>{cafeInfo[0]}</h3></Link>
+                        {/* <p>{cafeInfo[1]}</p>
                         <p>{cafeInfo[2], cafeInfo[3]}</p>
                         <p>{cafeInfo[4]}</p>
-                        <p>{cafeInfo[5]}</p>
+                        <p>{cafeInfo[5]}</p> */}
                     </div>
                     <div>
                         {rev.img.length < 5 ? null : <img src={rev.img} alt="user submited coffee shop" />}
@@ -75,23 +77,23 @@ const ProfileOthers = (props) => {
     
         return (
             <>
-            <h1>{clickedUser.username}'s reviews!</h1>
+            <h1>{clickedUser.username}'s reviews:</h1>
             <div>
                 {usersRevs}
             </div>
             </>
         )
-    } else {
+        
+    } 
+    else {
         return (
             <>
-            <h1>Log in please!</h1> 
-            <Link to='/login'>Login</Link>
+                <h1>Log in please!</h1> 
+                <Link className='button-class' to='/login'>Login</Link>
             </>
         )
     }
-    // return(
-    //     <h1>Ok</h1>
-    // )
+
 }
 
 

@@ -1,0 +1,38 @@
+.profile-div {
+    width: 100vw;
+    // text-align: center;
+    .user-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.user-rev-div {
+    width: 100vw;
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 10px 0;
+    padding: 5px 0 5px 0;
+  
+    img {
+      width: 100vw;
+    }
+  
+    p {
+      padding: 0px 20px 0 20px;
+    }
+  
+  }
+  
+
+  .name-feed {
+    padding: 5px 20px 0 20px;
+    color: #1b394b;
+  }
+
+  .coffe-name {
+    margin: 20px 0 20px 0;
+  }

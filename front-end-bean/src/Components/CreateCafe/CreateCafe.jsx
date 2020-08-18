@@ -4,8 +4,7 @@ import { DataContext } from "../../App";
 import apiUrl from "../../apiConfig";
 import axios from "axios";
 import CafeForm from "../../Shared/CafeForm/CafeForm";
-
-// import './CreateCafe.scss';
+import './CreateCafe.scss';
 
 
 const CreateCafe = (props) => {
@@ -69,20 +68,25 @@ const CreateCafe = (props) => {
 
   if (activeUser !== undefined) {
     return (
-      <>
+      <div className='cc-div'>
+        <h1>Submit a new cafe: </h1>
+        <div className='blurb'>
+          <h4>Want to put your cafe on the map?</h4>
+          <h4>Click Get Coordinates before submitting</h4>
+        </div>
         <CafeForm
           handleCafeChange={handleCafeChange}
           handleCoordsSubmit={handleCoordsSubmit}
           handleCafeSubmit={handleCafeSubmit}
           inputCafe={inputCafe}
         />
-      </>
+      </div>
     );
   } else {
     return (
       <>
         <h1>Log in please!</h1>
-        <Link to="/login">Login</Link>
+        <Link className='button-class' to="/login">Login</Link>
       </>
     );
   }

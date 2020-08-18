@@ -10,7 +10,7 @@ const Nav = ({ setHideChildren }) => {
   return (
     <div className={open ? "open-header-nav" : "closed-header-nav"}>
         <div>
-            {open ? null : <Link to={'/map'}><i className="fa fa-map-marker" aria-hidden="true"></i></Link>}
+            {open ? null : <Link to={'/map'}><i className="icon-color fa fa-map-marker fa-2x" aria-hidden="true"></i></Link>}
         </div>
       <nav id="mobile-nav">
 
@@ -22,7 +22,7 @@ const Nav = ({ setHideChildren }) => {
               setHideChildren(!open);
             }}
           >
-            <i className="fa fa-bars hamburger-hover" aria-hidden="true"></i>
+            {open ? <i className="fa fa-angle-down fa-3x" aria-hidden="true"></i> : <i className="icon-color fa fa-bars hamburger-hover fa-2x" aria-hidden="true"></i>}
           </div>
           {/* </div> */}
           <ul id={open ? "open" : "closed-burger-menu-list"}>
@@ -34,7 +34,7 @@ const Nav = ({ setHideChildren }) => {
                   setHideChildren(!open);
                 }}
               >
-                Home/Feed
+                Home
               </Link>
             </li>
             <li className="burger-menu-item">
@@ -48,7 +48,7 @@ const Nav = ({ setHideChildren }) => {
                 Map
               </Link>
             </li>
-            <li className="burger-menu-item">
+            {/* <li className="burger-menu-item">
               <Link
                 to="/favorites"
                 onClick={() => {
@@ -58,7 +58,7 @@ const Nav = ({ setHideChildren }) => {
               >
                 Favorites
               </Link>
-            </li>
+            </li> */}
             <li className="burger-menu-item">
               <Link
                 // to={activeUser ? `/profile/user/${activeUser.id}` : '/login'}
@@ -73,7 +73,7 @@ const Nav = ({ setHideChildren }) => {
             </li>
             <li className="burger-menu-item">
               <Link
-                to="/postreview"
+                to="/post-review"
                 onClick={() => {
                   setOpen(!open);
                   setHideChildren(!open);

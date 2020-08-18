@@ -1,4 +1,5 @@
 import React from 'react';
+import './LoginForm.scss';
 
 const LoginForm = ({ handleChange, handleSubmit, input }) => {
     console.log(input, 'input')
@@ -11,19 +12,13 @@ const LoginForm = ({ handleChange, handleSubmit, input }) => {
                 value={input.username}
                 placeholder='username'
             />
-            <label>ID: </label>
-            <input 
-                onChange={handleChange}
-                name='id'
-                value={input.id}
-                placeholder='id'
-            />
             <label>Password: </label>
             <input 
                 onChange={handleChange}
                 name='password'
                 value={input.password}
                 placeholder='password'
+                type='password'
             />
             <button>Submit</button>
         </form>

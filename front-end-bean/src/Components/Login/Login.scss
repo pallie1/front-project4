@@ -1,0 +1,45 @@
+.login-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin-top: 35px;
+  }
+
+
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    height: 1.9rem;
+    width: 10rem;
+    background-color: #2b5978;
+    // background-color: black;
+    color: white;
+    cursor: pointer;
+    margin: 20px 5px 0 5px;
+    font-size: large;
+  }
+}
+.button-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  height: 1.9rem;
+  width: 10rem;
+  background-color: #264E69;
+  // background-color: black;
+  color: white;
+  cursor: pointer;
+  margin: 0px 5px 0 5px;
+  font-size: large;
+}
+
+

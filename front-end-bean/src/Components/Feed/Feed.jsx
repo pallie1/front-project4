@@ -10,6 +10,9 @@ const Feed = () => {
   console.log('acitveUSer', activeUser)
   const [reviews, setReviews] = useState([]);
 
+  console.log('active user zero', activeUser)
+  console.log('active user', activeUser)
+
   useEffect(() => {
     const allRevAPICall = async () => {
       try {
@@ -32,8 +35,8 @@ const Feed = () => {
 
       return (
         <div className={'review-div'} key={review.id}>
-          <Link to={`/profile/${review.user_id}`}>{review.user.username}</Link><p> went to</p>
-          <p>{review.shop.name}</p>
+          {review.user_id === activeUser.id ? <Link className='name-feed' to={`/profile`}>{review.user.username}</Link> : <Link className='name-feed' to={`/profile/${review.user_id}`}>{review.user.username}</Link>}
+          <Link className='name-feed coffe-name' to={`/reviews/${review.shop.id}`}><h3>{review.shop.name}</h3></Link>
           {review.img.length < 5 ? null : <img src={review.img} alt="user submited coffee shop" />}
           <p>{review.rate}</p>
           <p>{review.content}</p>
@@ -45,11 +48,11 @@ const Feed = () => {
   if (activeUser !== undefined) {
   return (
     <>
-      <div>
-      <Link to='/profile'>{activeUser.username}</Link>
-      <h2><Link to='/post-review'>Where have you been?</Link></h2>
+      <div className='u-bean'>
+        <Link to='/profile'>{activeUser.username}</Link>
+        <h2><Link to='/post-review'>Where have you been?</Link></h2>
       </div>
-      <h1>Where have other users have been.</h1>
+      <h3>Where other users have been.</h3>
       <div>{mappedRevs}</div>
     </>
   );

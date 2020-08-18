@@ -14,7 +14,7 @@ const PostReview = (props) => {
     const [allCafes, setAllCafes] = useState([]);
     const [chosenCafe, setChosenCafe] = useState({});
 
-    // console.log('post review data context', activeUser)
+    console.log('post review data context', activeUser)
 
     useEffect(() => {
         const makeCafeAPICall = async () => {
@@ -89,12 +89,16 @@ const PostReview = (props) => {
         <>
 
         <div className="container">
+            <h1>Where have you been?</h1>
             <Select 
+            className='smaller-width-select'
             options={mappedCafes}
             onChange={handleChange}
              />
-             <p>Cafe not listed? Submit a new one!</p>
-             <Link to='/create-cafe'>New cafe!</Link>
+             <div className='blurb-pr'>
+             <h3>Cafe not listed? Submit a new one!</h3>
+             <Link className='button-class' to='/create-cafe'>Add a Cafe</Link>
+             </div>
         </div>
 
         <PostForm 
@@ -108,7 +112,7 @@ const PostReview = (props) => {
         return (
             <>
                 <h1>Log in please!</h1>
-                <Link to='/login'>Login</Link>
+                <Link className='button-class' to='/login'>Login</Link>
             </>
         )
     }

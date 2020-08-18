@@ -1,5 +1,31 @@
-// input {
-//     border: 1px solid grey;
-//     border-radius: 3px;
-//     height: 1.5rem;
-// }
+.cc-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 5px;
+      height: 1.9rem;
+      width: 10rem;
+      background-color: #2b5978;
+      color: white;
+      cursor: pointer;
+      margin: 20px 5px 40px 5px;
+      font-size: large;
+    }
+  } 
+  
+.blurb {
+    background-color: #D2E4EF;
+    height: 20vh;
+    width: 45vw;
+    padding: 10px;
+    margin: 15px 0 30px 0;
+    text-align: center;
+    border-radius: 4px;
+}  

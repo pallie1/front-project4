@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import UserForm from "../../Shared/UserForm/UserForm";
 import apiUrl from "../../apiConfig";
 import axios from "axios";
-// import './EditProfile.scss';
+import './EditProfile.scss';
 
-const EditProfile = () => {
+const EditProfile = (props) => {
   const { activeUser, setActiveUser } = useContext(DataContext);
   const [isUserNew, isSetNewUser] = useState(false);
   const [input, setInput] = useState({
@@ -22,15 +22,26 @@ const EditProfile = () => {
     console.log("activeUser", activeUser);
 
     const handleSubmit = (event) => {
+      console.log('event', event)
       event.preventDefault();
+      const user = {
+        user: {
+          username: input.username,
+          password: input.password,
+        },
+      };
       axios({
         url: `${apiUrl}/users/${activeUser.id}`,
         method: "PUT",
-        data: input,
+        data: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-        .then(() => alert("Account updated!"))
         .then(() => isSetNewUser(true))
-        .catch(console.error);
+        .then(() => alert("Account updated!"))
+        // console.log('isUser new', isUserNew)
+        // .catch(console.error);
       // .then(axios(`${apiUrl}/users/${activeUser.id}`)
     };
 
@@ -39,12 +50,17 @@ const EditProfile = () => {
     if (isUserNew) {
       axios(`${apiUrl}/users/${activeUser.id}`)
         .then((res) => {
+          console.log('res from get call on edit profile', res)
           setActiveUser(res.data);
+          
           // console.log('res from get call', res)
         })
+        .then(()=> isSetNewUser(false))
+        .then(() => props.history.push('/profile'))
 
         .catch((err) => console.error(err));
     }
+    
 
     return (
       <>
@@ -54,15 +70,15 @@ const EditProfile = () => {
           handleSubmit={handleSubmit}
           input={input}
         />
-        <Link to="/delete-profile">Delete Profile</Link>
-        <Link to="/profile">Go Back</Link>
+        <Link className='button-cacle button-spacer' to="/delete-profile">Delete Profile</Link>
+        <Link className='button-cacle button-spacer' to="/profile">Go Back</Link>
       </>
     );
   } else {
     return (
         <>
         <h1>Log in please!</h1> 
-        <Link to='/login'>Login</Link>
+        <Link className='button-class' to='/login'>Login</Link>
         </>
         )
   }

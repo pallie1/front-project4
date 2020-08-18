@@ -3,6 +3,7 @@ import UserForm from '../../Shared/UserForm/UserForm';
 import { Link } from 'react-router-dom';
 import apiUrl from '../../apiConfig';
 import axios from 'axios';
+import './CreateAccount.scss';
 
 const CreateAccount = (props) => {
     const [input, setInput] = useState({username: "", id: "", password: ""});
@@ -30,15 +31,15 @@ const CreateAccount = (props) => {
 
 
     return (
-        <>
+        <div className='create-acct-div'>
         <h1>Create an account!</h1>
         <UserForm
             handleChange={handleChange}
             handleSubmit={handleSubmit}
             input={input}
             />
-        <Link to='/'>Cancle</Link>
-        </>
+        <Link id='button-ca' to='/'>Cancle</Link>
+        </div>
     )
 }
 

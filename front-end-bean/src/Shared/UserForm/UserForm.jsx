@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserForm.scss';
 
 const UserForm = ({ handleChange, handleSubmit, input }) => {
     console.log(input, 'input')
@@ -18,7 +19,7 @@ const UserForm = ({ handleChange, handleSubmit, input }) => {
                 value={input.password}
                 placeholder='password'
             />
-            <button>Submit</button>
+            <button className='button-class button-spacer' >Submit</button>
         </form>
     )
 }
