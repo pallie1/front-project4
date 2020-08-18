@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import ReactMapGl, { Marker } from "react-map-gl";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 // import Geocoder from "react-map-gl-geocoder";
 import { DataContext } from "../../App";
 import axios from "axios";
@@ -14,13 +14,13 @@ const MapDis = () => {
   const { activeUser } = useContext(DataContext);
   const [allCafes, setAllCafes] = useState([]);
   const [viewPort, setViewPort] = useState({
-    longitude: -50.081481035097873,
-    latitude: 2.54125533129108753,
+    longitude: -50.08,
+    latitude: 2.54,
     zoom: 0.7,
     width: "100vw",
     height: "100vh",
   });
-  
+
   console.log("vewPort", viewPort);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const MapDis = () => {
       try {
         const res = await axios({
           url: `${apiUrl}/shops`,
-          method: 'GET',
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
@@ -54,59 +54,40 @@ const MapDis = () => {
       coordsPairs.push(helperObj);
     }
   });
-  console.log("coords Parirs from MapDis", coordsPairs);
 
-  //     const coder = new Geocoder({
-  //       accessToken: process.env.REACT_APP_API_KEY,
-  //       marker: {
-  //       color: 'orange'
-  //       },
-  //       mapboxgl: ReactMapGl
-  //       });
-
-  //       ReactMapGl.addControl(coder);
-
-//   if (activeUser !== undefined) {
-    return (
-      <div>
-        <ReactMapGl
-          {...viewPort}
-          mapboxApiAccessToken={process.env.REACT_APP_API_KEY}
-          mapStyle="mapbox://styles/notalemesa/ck8dqwdum09ju1ioj65e3ql3k"
-          onViewportChange={(viewPort) => {
-            setViewPort(viewPort);
-          }}
-        >
-{coordsPairs.map(cafe => {
-    console.log('map inside return', cafe)
-    return(
-    <Marker
-      key={cafe.id}
-      longitude={Number(cafe.coordinates[0])}
-      latitude={Number(cafe.coordinates[1])}
-    >
-      <div>
-        <Link to={`/reviews/${cafe.id}`}>
-        <i className="fa fa-coffee" id='icon-color' aria-hidden="true"></i>
-        </Link>
-      </div>
-    </Marker>)
-})}
-        </ReactMapGl>
-      
-      </div>
-    );
-//   } else {
-//     return <h1>Loading...</h1>
-//   }
-//   return (
-//     <>
-//       <h1>Log in please!</h1>
-//       <Link to="/login">Login</Link>
-//     </>
-//   );
+  return (
+    <div>
+      <ReactMapGl
+        {...viewPort}
+        mapboxApiAccessToken={process.env.REACT_APP_API_KEY}
+        mapStyle="mapbox://styles/notalemesa/ck8dqwdum09ju1ioj65e3ql3k"
+        onViewportChange={(viewPort) => {
+          setViewPort(viewPort);
+        }}
+      >
+        {coordsPairs.map((cafe) => {
+          console.log("map inside return", cafe);
+          return (
+            <Marker
+              key={cafe.id}
+              longitude={Number(cafe.coordinates[0])}
+              latitude={Number(cafe.coordinates[1])}
+            >
+              <div>
+                <Link to={`/reviews/${cafe.id}`}>
+                  <i
+                    className="fa fa-coffee"
+                    id="icon-color"
+                    aria-hidden="true"
+                  ></i>
+                </Link>
+              </div>
+            </Marker>
+          );
+        })}
+      </ReactMapGl>
+    </div>
+  );
 };
 
 export default MapDis;
-
-
