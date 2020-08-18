@@ -2,7 +2,6 @@ import React from 'react';
 import './UserForm.scss';
 
 const UserForm = ({ handleChange, handleSubmit, input }) => {
-    console.log(input, 'input')
     return (
         <form onSubmit={handleSubmit}>
             <label>Username: </label>

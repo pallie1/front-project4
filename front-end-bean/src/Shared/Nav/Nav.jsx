@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { DataContext } from '../../App';
 import "./Nav.scss";
 
 const Nav = ({ setHideChildren }) => {
-  // const { activeUser } = useContext(DataContext);
   const [open, setOpen] = useState(false);
 
   return (
@@ -24,7 +22,6 @@ const Nav = ({ setHideChildren }) => {
           >
             {open ? <i className="fa fa-angle-down fa-3x" aria-hidden="true"></i> : <i className="icon-color fa fa-bars hamburger-hover fa-2x" aria-hidden="true"></i>}
           </div>
-          {/* </div> */}
           <ul id={open ? "open" : "closed-burger-menu-list"}>
             <li className="burger-menu-item">
               <Link
@@ -48,20 +45,8 @@ const Nav = ({ setHideChildren }) => {
                 Map
               </Link>
             </li>
-            {/* <li className="burger-menu-item">
-              <Link
-                to="/favorites"
-                onClick={() => {
-                  setOpen(!open);
-                  setHideChildren(!open);
-                }}
-              >
-                Favorites
-              </Link>
-            </li> */}
             <li className="burger-menu-item">
               <Link
-                // to={activeUser ? `/profile/user/${activeUser.id}` : '/login'}
                 to="/profile"
                 onClick={() => {
                   setOpen(!open);
@@ -84,53 +69,6 @@ const Nav = ({ setHideChildren }) => {
             </li>
           </ul>
         </div>
-        {/* <div id="desk-menu">
-          <h1 className="layout-h1">Forte</h1>
-          <ul id="desk-ul">
-            <li>
-              <Link
-                to="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/meetTheTeam"
-              >
-                Meet the Team
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/dashboard"
-              >
-                Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/signup"
-              >
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/login"
-              >
-                Login
-              </Link>
-            </li>
-          </ul>
-        </div> */}
       </nav>
     </div>
   );

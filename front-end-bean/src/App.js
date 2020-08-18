@@ -14,8 +14,6 @@ import ProfileOthers from './Components/ProfileOthers/ProfileOthers';
 import './App.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-
-
 export const DataContext = createContext();
 
 function App() {

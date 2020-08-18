@@ -1,32 +1,14 @@
 .create-acct-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    h3 {
-      margin-top: 35px;
-    }
-  
-  
-  
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: none;
-      border-radius: 5px;
-      height: 1.9rem;
-      width: 10rem;
-      background-color: #2b5978;
-      // background-color: black;
-      color: white;
-      cursor: pointer;
-      margin: 20px 0px 25px 0px;
-      font-size: large;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin-top: 35px;
   }
-  #button-ca {
+
+  button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,11 +16,24 @@
     border-radius: 5px;
     height: 1.9rem;
     width: 10rem;
-    background-color: #727272;
+    background-color: #2b5978;
+    // background-color: black;
     color: white;
     cursor: pointer;
+    margin: 20px 0px 25px 0px;
     font-size: large;
   }
-  
-  
-  
+}
+#button-ca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  height: 1.9rem;
+  width: 10rem;
+  background-color: #727272;
+  color: white;
+  cursor: pointer;
+  font-size: large;
+}

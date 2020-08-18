@@ -38,33 +38,21 @@ const ProfileOthers = (props) => {
    
 
         if ( activeUser !== undefined && clickedUser.reviews !== undefined) {    
-            let cafeInfo = [];
+            // let cafeInfo = [];
         let usersRevs = clickedUser.reviews.map(rev => {
             for (let i=0; i<clickedUser.reviews.length; i++) {
                 if (clickedUser.shops[i].id === rev.shop_id) {
-                    cafeInfo.push(
-                        clickedUser.shops[i].name,
-                        // clickedUser.shops[i].address,
-                        // clickedUser.shops[i].city,
-                        // clickedUser.shops[i].state,
-                        // clickedUser.shops[i].postalcode,
-                        // clickedUser.shops[i].country
-                        clickedUser.shops[i].id
-                        )
-                }
-            }
+                    // cafeInfo.push(
+                    //     clickedUser.shops[i].name
+                    //     )
 
-            console.log('cafeInfo', cafeInfo)
+
+            // console.log('cafeInfo', cafeInfo)
            
             return (
                 <div key={rev.id} className='user-rev-div' >
                     <div>
-                        {/* <h1>{cafeInfo[0]}</h1> */}
-                        <Link to={`/reviews/${cafeInfo[1]}`}><h3 className='name-feed'>{cafeInfo[0]}</h3></Link>
-                        {/* <p>{cafeInfo[1]}</p>
-                        <p>{cafeInfo[2], cafeInfo[3]}</p>
-                        <p>{cafeInfo[4]}</p>
-                        <p>{cafeInfo[5]}</p> */}
+                        <Link to={`/reviews/${rev.shop_id}`}><h3 className='name-feed'>{clickedUser.shops[i].name}</h3></Link>
                     </div>
                     <div>
                         {rev.img.length < 5 ? null : <img src={rev.img} alt="user submited coffee shop" />}
@@ -73,6 +61,8 @@ const ProfileOthers = (props) => {
                     </div>
                 </div>
             )
+        }
+    }
         })
     
         return (

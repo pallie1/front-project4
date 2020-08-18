@@ -4,8 +4,7 @@ import { DataContext } from "../../App";
 import apiUrl from "../../apiConfig";
 import axios from "axios";
 import CafeForm from "../../Shared/CafeForm/CafeForm";
-import './CreateCafe.scss';
-
+import "./CreateCafe.scss";
 
 const CreateCafe = (props) => {
   const { activeUser } = useContext(DataContext);
@@ -38,22 +37,16 @@ const CreateCafe = (props) => {
     axios(
       `https://api.mapbox.com/v4/geocode/mapbox.places/${addressString}.json?access_token=${process.env.REACT_APP_API_KEY}`
     ).then((res) => {
-      console.log(
-        "res.data.features[0].geometry.coordinates)",
-        res.data.features[0].geometry.coordinates
-      );
       setCoodsFound(res.data.features[0].geometry.coordinates);
     });
   };
 
   const handleCafeSubmit = () => {
-  
     if (coordsFound !== undefined) {
       let stringCoords = "";
       stringCoords = `${coordsFound[0]} ${coordsFound[1]}`;
       inputCafe.coords = stringCoords;
 
-      console.log("input cafe inside handleCafeSubmit", inputCafe);
       axios({
         url: `${apiUrl}/shops`,
         method: "POST",
@@ -68,9 +61,9 @@ const CreateCafe = (props) => {
 
   if (activeUser !== undefined) {
     return (
-      <div className='cc-div'>
+      <div className="cc-div">
         <h1>Submit a new cafe: </h1>
-        <div className='blurb'>
+        <div className="blurb">
           <h4>Want to put your cafe on the map?</h4>
           <h4>Click Get Coordinates before submitting</h4>
         </div>
@@ -86,7 +79,9 @@ const CreateCafe = (props) => {
     return (
       <>
         <h1>Log in please!</h1>
-        <Link className='button-class' to="/login">Login</Link>
+        <Link className="button-class" to="/login">
+          Login
+        </Link>
       </>
     );
   }

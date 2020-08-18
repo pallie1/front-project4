@@ -14,13 +14,13 @@ const MapDis = () => {
   const { activeUser } = useContext(DataContext);
   const [allCafes, setAllCafes] = useState([]);
   const [viewPort, setViewPort] = useState({
-    longitude: 15.274974345203223,
-    latitude: 14.110227334500253,
+    longitude: -50.081481035097873,
+    latitude: 2.54125533129108753,
     zoom: 0.7,
     width: "100vw",
     height: "100vh",
   });
-
+  
   console.log("vewPort", viewPort);
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const MapDis = () => {
             "Content-Type": "application/json",
           },
         });
-        // console.log('res from get all cafes post rev', res.data)
         if (res.data.length > 0) {
           setAllCafes(res.data);
         }
@@ -55,8 +54,6 @@ const MapDis = () => {
       coordsPairs.push(helperObj);
     }
   });
-  //   console.log('allCafes from MapDis', allCafes)
-  //   console.log('addresses from MapDis', addresses)
   console.log("coords Parirs from MapDis", coordsPairs);
 
   //     const coder = new Geocoder({
@@ -80,20 +77,21 @@ const MapDis = () => {
             setViewPort(viewPort);
           }}
         >
-{coordsPairs.map(cafe => (
-    // console.log('map inside return', cafe.id)
+{coordsPairs.map(cafe => {
+    console.log('map inside return', cafe)
+    return(
     <Marker
       key={cafe.id}
       longitude={Number(cafe.coordinates[0])}
       latitude={Number(cafe.coordinates[1])}
     >
-      {/* <div> */}
+      <div>
         <Link to={`/reviews/${cafe.id}`}>
-        <i className="fa fa-coffee icon-color" aria-hidden="true"></i>
+        <i className="fa fa-coffee" id='icon-color' aria-hidden="true"></i>
         </Link>
-      {/* </div> */}
-    </Marker>
-  ))}
+      </div>
+    </Marker>)
+})}
         </ReactMapGl>
       
       </div>
