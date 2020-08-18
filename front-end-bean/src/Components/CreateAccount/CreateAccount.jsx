@@ -16,10 +16,19 @@ const CreateAccount = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        const user = {
+            user: {
+              username: input.username,
+              password: input.password,
+            },
+          };
         axios({
             url: `${apiUrl}/users`,
             method: 'POST',
-            data: input
+            data: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json",
+              },
         })
         .then(() => {
             props.history.push('/login');

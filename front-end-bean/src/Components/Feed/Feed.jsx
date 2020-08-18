@@ -60,7 +60,7 @@ const Feed = () => {
     return (
       <>
       <h1>Log in please!</h1> 
-      <Link to='/login'>Login</Link>
+      <Link className='button-class' to='/login'>Login</Link>
       </>
       )
   }
