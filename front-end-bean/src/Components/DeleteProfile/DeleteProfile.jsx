@@ -3,6 +3,7 @@ import { DataContext } from "../../App";
 import { Link, Redirect } from "react-router-dom";
 import apiUrl from "../../apiConfig";
 import axios from "axios";
+import './DeleteProfile.scss';
 
 const DeleteProfile = () => {
   const { activeUser } = useContext(DataContext);
@@ -40,12 +41,12 @@ const DeleteProfile = () => {
   }
 
   return (
-    <>
+    <div className='delete-div'>
       <h2>Are you sure you want to delete your account and all reviews?</h2>
       <h2>This will be permanent.</h2>
       <button className='button-cacle button-spacer' onClick={destroy}>Delete Profile</button>
       <Link className='button-cacle button-spacer' to="/profile">Go Back</Link>
-    </>
+    </div>
   );
   } else {
     return (

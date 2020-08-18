@@ -12,11 +12,11 @@ const Profile = () => {
         if (activeUser.reviews.length === 0) {
             return (
                 <>  
-                    <p>{activeUser.name}</p>
-                    <Link to='/edit-profile'>Edit Profile</Link>
-                    <h1>You don't have any reviews!</h1>
+                    <p>{activeUser.username}</p>
+                    <Link className='button-class' to='/edit-profile'>Edit Profile</Link>
+                    <h2>You don't have any reviews!</h2>
                     <h2>Add one now!</h2>
-                    <Link to='/post-review'>Add review</Link>
+                    <Link className='button-class' to='/post-review'>Add review</Link>
                 </>
             )
         } else {

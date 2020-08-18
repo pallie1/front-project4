@@ -26,7 +26,13 @@ const MapDis = () => {
   useEffect(() => {
     const makeCafeAPICall = async () => {
       try {
-        const res = await axios(`${apiUrl}/shops`);
+        const res = await axios({
+          url: `${apiUrl}/shops`,
+          method: 'GET',
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         // console.log('res from get all cafes post rev', res.data)
         if (res.data.length > 0) {
           setAllCafes(res.data);
@@ -89,7 +95,7 @@ const MapDis = () => {
     </Marker>
   ))}
         </ReactMapGl>
-        <h1>HEY i;m a mappp</h1>
+      
       </div>
     );
 //   } else {
