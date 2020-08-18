@@ -6,7 +6,7 @@ import axios from 'axios';
 import './CreateAccount.scss';
 
 const CreateAccount = (props) => {
-    const [input, setInput] = useState({username: "", id: "", password: ""});
+    const [input, setInput] = useState({username: "", password: ""});
 
     console.log('input from ca', input)
 
