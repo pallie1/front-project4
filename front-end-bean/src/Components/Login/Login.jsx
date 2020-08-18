@@ -9,7 +9,7 @@ import "./Login.scss";
 const Login = () => {
   const { activeUser, setActiveUser } = useContext(DataContext);
   const [input, setInput] = useState({ username: "", password: "" });
-  //   const [invalidEntry, setInvalidEntry] = useState("");
+  const [invalidEntry, setInvalidEntry] = useState("");
 
   const handleChange = (event) => {
     //   console.log('event from login', event)
@@ -39,12 +39,15 @@ const Login = () => {
             "Content-Type": "application/json",
           },
         });
-        // console.log(res.data, "response from login");
+        console.log(res.data, "response from login");
         // console.log(res.data.username, 'username res login')
 
-        if (res.data.user !== undefined) {
+        if (res.data.status === 200) {
           // console.log('res.data from login', JSON.parse(res.data.user))
           setActiveUser(JSON.parse(res.data.user));
+          setInput("");
+        } else {
+          setInvalidEntry('Invalid Credentials');
           setInput("");
         }
       } catch (err) {
@@ -62,6 +65,7 @@ const Login = () => {
   return (
     <div className='login-div'>
       <h1>Login</h1>
+      <h3>{invalidEntry}</h3>
       <LoginForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
