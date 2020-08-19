@@ -38,6 +38,7 @@ const CreateCafe = (props) => {
       `https://api.mapbox.com/v4/geocode/mapbox.places/${addressString}.json?access_token=${process.env.REACT_APP_API_KEY}`
     ).then((res) => {
       setCoodsFound(res.data.features[0].geometry.coordinates);
+      alert('Located Coordinates!')
     });
   };
 

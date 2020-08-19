@@ -48,7 +48,7 @@ const SingleCafeRevs = (props) => {
                   {usersArr[i].username}
                 </Link>
               ) : (
-                <Link to={`/profile/${usersArr[i].id}`}>
+                <Link className="name-feed" to={`/profile/${usersArr[i].id}`}>
                   {usersArr[i].username}
                 </Link>
               )}
